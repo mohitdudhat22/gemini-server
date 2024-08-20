@@ -12,6 +12,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 app.use(express.json());
+app.use(cors({origin: "*"}));
 
 // Route to generate content based on a prompt
 app.post('/api/generate', async (req, res) => {
